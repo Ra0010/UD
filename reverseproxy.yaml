@@ -19,6 +19,5 @@ spec:
       - name: udagram-reverseproxy
         image: mynewedasdsa
         ports:
-          - port: 80
-            protocol: TCP
-            targetport: 8080
+        - containerPort: 80
+
