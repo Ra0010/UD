@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: mynewedasdsa
+        image: mynewedasdsa/udagram-frontend
         ports:
         - containerPort: 80
 
