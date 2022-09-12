@@ -1,18 +1,11 @@
-# TODO: Complete the get_ruler function
-def get_ruler(kingdom):
-    
-  ruler = ''
-  # TODO: Add logic to determine the ruler of the kingdom
-  # It should be either 'Alice', 'Bob' or 'nobody'.
-  return ruler
-
-def main():
-  # Get the number of test cases
-  T = int(raw_input())
-  for t in range(T):
-    # Get the kingdom
-    kingdom = raw_input()
-    print 'Case #%d: %s is ruled by %s.' % (t + 1, kingdom, get_ruler(kingdom))
-
-if __name__ == '__main__':
-  main()
+FROM node:12
+# Create app directory
+WORKDIR /usr/src/app
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
+COPY package*.json ./
+RUN npm ci 
+# Bundle app source
+COPY . .
+EXPOSE 8080
+CMD [ "npm", "run", "prod" ]
